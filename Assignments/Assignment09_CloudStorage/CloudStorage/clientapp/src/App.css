@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.controlsContainer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.error {
+  color: red;
+  font-size: 1.5em;
+}
