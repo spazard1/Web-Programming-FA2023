@@ -1,0 +1,52 @@
+body {
+	font-size: 7rem;
+}
+
+textarea {
+	width: 50%;
+	height: 30%;
+}
+
+.errorMessage {
+	color: red;
+}
+
+.displayNone {
+	display: none !important;
+}
+	
+span
+{
+	color: blue;
+	font-size: 5vh;
+}
+
+.fixed {
+	position: fixed;
+	bottom: 20%;
+	right: 20%;
+}
+
+.absolute {
+	position: absolute;
+	bottom: 20%;
+	left: 20%;
+}
+
+.orange {
+	color: orange;
+	background-color: black;
+}
+
+.smallFont {
+	font-size: 1vh;
+}
+
+
+.largeFont {
+	font-size: 10vh;
+}
+
+#classAttribute {
+	text-decoration: underline;
+}
