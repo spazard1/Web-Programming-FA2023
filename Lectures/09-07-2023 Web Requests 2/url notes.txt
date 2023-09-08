@@ -1,0 +1,28 @@
+GET https://myserver.com/api/students
+    List all of the students
+
+GET https://myserver.com/api/students?firstName=Steven
+    List all of the students with a first name of Steven
+
+GET https://myserver.com/api/students?firstName=Steven&lastName=Yackel
+    List all of the students with a first name of Steven and a last name of Yackel
+
+GET https://myserver.com/api/students/5301
+    Get one student, with the id 5301
+
+GET https://myserver.com/api/students/5301/addresses
+    List all address of student with id 5301
+
+GET https://myserver.com/api/students/5301/addresses/1
+    Get the first address of the student with the id 5301
+
+POST https://myserver.com/api/students
+    Create a new student
+
+POST https://myserver.com/api/students/5301/addresses
+    Create a new address for the student with id 5301
+
+PATCH https://myserver.com/api/students/5301
+    Edit (some or all) fields of the student with id 5301
+
+
