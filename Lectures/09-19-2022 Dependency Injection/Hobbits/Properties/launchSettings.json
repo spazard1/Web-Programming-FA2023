@@ -3,6 +3,7 @@
     "Hobbits": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "api/hobbits",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

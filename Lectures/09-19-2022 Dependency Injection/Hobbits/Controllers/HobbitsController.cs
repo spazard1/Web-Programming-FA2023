@@ -15,18 +15,31 @@ namespace Hobbits.Controllers
     [Route("api/[controller]")]
     public class HobbitsController : Controller
     {
+        private readonly HobbitLogger hobbitLogger;
+        private readonly HobbitsDatabase hobbitsDatabase;
 
-        private readonly static HobbitsDatabase hobbitsDatabase = new();
+        public HobbitsController(HobbitLogger hobbitLogger, HobbitsDatabase hobbitsDatabase) { 
+            this.hobbitLogger = hobbitLogger;
+            this.hobbitsDatabase = hobbitsDatabase;
+        }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Json(hobbitsDatabase.GetAll().Select(hobbit => new HobbitEntity(hobbit)));
+            hobbitLogger.Log("Starting GET ALL");
+
+            var hobbits = hobbitsDatabase.GetAll().Select(hobbit => new HobbitEntity(hobbit));
+
+            hobbitLogger.Log("Finishing GET ALL");
+
+            return Json(hobbits);
         }
 
         [HttpGet("{index:int}")]
         public IActionResult Get(int index)
         {
+            hobbitLogger.Log("Starting GET ONE " + index);
+
             if (index < 0 || index >= hobbitsDatabase.Count)
             {
                 return StatusCode((int)HttpStatusCode.NotFound);
@@ -38,6 +51,8 @@ namespace Hobbits.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] HobbitEntity hobbitEntity)
         {
+            hobbitLogger.Log("Starting POST");
+
             hobbitsDatabase.Add(hobbitEntity.ToModel());
 
             return Json(hobbitEntity);
