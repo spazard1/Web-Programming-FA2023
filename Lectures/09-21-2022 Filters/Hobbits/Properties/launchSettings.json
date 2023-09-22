@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Hobbits": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/hobbits",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:60543;http://localhost:60544"
+    }
+  }
+}
