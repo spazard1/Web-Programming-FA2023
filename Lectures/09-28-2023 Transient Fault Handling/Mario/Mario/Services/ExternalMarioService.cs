@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Polly;
 using System.Diagnostics;
 using System.Net;
+using System.Net.Http.Headers;
 
 namespace Mario.Services
 {
@@ -26,6 +27,10 @@ namespace Mario.Services
 
             await policy.ExecuteAsync(async () =>
             {
+                var stringContent = new StringContent(JsonConvert.SerializeObject(new FavoriateACharacterEntity()
+                {
+                    Name = "steven"
+                }), new MediaTypeHeaderValue("application/json"));
                 var response = await httpClient.GetAsync("https://webprogrammingmario.azurewebsites.net/api/mario/jump");
                 response.EnsureSuccessStatusCode();
                 responseString = await response.Content.ReadAsStringAsync();
@@ -37,6 +42,11 @@ namespace Mario.Services
             }
 
             return JsonConvert.DeserializeObject<ExternalMarioEntity?>(responseString);
+        }
+
+        private class FavoriateACharacterEntity
+        {
+            public string Name { get; set; }
         }
     }
 }
