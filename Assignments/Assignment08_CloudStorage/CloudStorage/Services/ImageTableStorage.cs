@@ -72,13 +72,13 @@ namespace CloudStorage.Services
             return blobServiceClient.Uri.ToString();
         }
 
-        public string GetUploadUrl(string fileName)
+        public string GetUploadUrl(string id)
         {
             // Create a SAS token that's valid for one hour.
             BlobSasBuilder sasBuilderBlob = new()
             {
                 BlobContainerName = blobContainerClient.Name,
-                BlobName = fileName,
+                BlobName = id,
                 Resource = "b",
                 StartsOn = DateTimeOffset.UtcNow.Subtract(TimeSpan.FromMinutes(15)),
                 ExpiresOn = DateTimeOffset.UtcNow.AddHours(1)
@@ -88,7 +88,7 @@ namespace CloudStorage.Services
             // Use the key to get the SAS token.
             var sasToken = sasBuilderBlob.ToSasQueryParameters(new StorageSharedKeyCredential(blobServiceClient.AccountName, connectionStringProvider.AccountKey)).ToString();
 
-            return blobContainerClient.GetBlockBlobClient(fileName).Uri + "?" + sasToken;
+            return blobContainerClient.GetBlockBlobClient(id).Uri + "?" + sasToken;
         }
 
         public string GetDownloadUrl(ImageModel image)

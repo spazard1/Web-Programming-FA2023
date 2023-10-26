@@ -18,7 +18,7 @@ namespace CloudStorage.Services
 
         string GetBlobUrl();
 
-        string GetUploadUrl(string fileName);
+        string GetUploadUrl(string id);
 
         string GetDownloadUrl(ImageModel image);
 
