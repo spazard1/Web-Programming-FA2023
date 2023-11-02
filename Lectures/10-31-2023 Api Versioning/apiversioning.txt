@@ -1,0 +1,36 @@
+Api Versioning
+
+Headers
+
+	Pros
+	
+		Organization to metadata of the request
+	
+	Cons
+
+		Can't easily be set by a end-user
+		
+Body
+
+	Pros
+	
+		More difficult to see deprecated versions
+		
+	
+	Cons
+	
+		Mixed with other content that isn't related to the version
+		Bodys aren't sent with GET requests
+		Must download the content-stream in order to get the version
+
+URL
+
+	Pros
+	
+		Easily visible to the end user, easily changable by the end-user
+		Cache-busting when URL changes
+		
+	Cons
+	
+		Urls get stale
+		Longer URLs, therefore URL is not as user-friendly
