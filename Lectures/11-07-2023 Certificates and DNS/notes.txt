@@ -1,0 +1,48 @@
+Certificates
+
+    file format .cer or .pfx
+
+    1. Public Key
+
+        Everybody sees this Key
+        .cer files only have a public key (no private key)
+
+
+    2. Private Key 
+        only in .pfx files
+
+        -RSA
+            2^2048
+
+        -Eliptical Curve
+            2^128
+
+
+    3. Subject
+        CN=www.google.com
+
+
+        Alternative names
+            CN=mail.google.com
+            CN=*.google.com
+
+    4. Signature
+        This comes from a certificate authority
+
+
+makecert.exe -ks 2048 -a RSA -sub="CN=www.google.com"
+
+
+
+DNS
+
+    Domain Name Service
+
+    History: 7 top level domains, .net, .com, .gov, ....
+
+    A the final step, this is actually the IP Address (v4, x.x.x.x)
+    AAAA the final step, v6 ip address, hex format FF::45:34
+    Namespace, google, com
+    CNAME stream.net -> microsoftstream.net
+    TXT
+
