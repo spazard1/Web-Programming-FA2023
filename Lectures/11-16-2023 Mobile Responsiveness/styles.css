@@ -1,0 +1,18 @@
+body {
+}
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	border: 3px solid blue;
+	padding: 1rem;
+	gap: 2vw;
+}
+
+.red {
+	background-color: red;
+	width: 15vmax;
+	height: 15vmax;
+	border: 3px solid black;
+	font-size: 1rem;
+}
