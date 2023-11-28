@@ -1,0 +1,65 @@
+Logging
+
+5 - Trace/Diagnostics
+Log EVERYTHING, methods starting/stopping, return values from functions, timings of methods
+
+4 - Debug
+Where do you think your code MIGHT fail?
+
+3 - Information
+A user thing happened, a controller finshed running, a row was created in the database
+
+2 - Warning
+Not actual problem yet, but could be
+
+1 - Error
+An actual problem, usually an exception is thrown
+
+0 - Crtical
+Entire server failure, perhaps not even able to boot up
+
+
+-1 Failure Audit
+Someone tried to login that isn't authorized
+
+Why do we have numerical values associated with these levels?
+Able to query, read logs by level easily, i.e. all logs less than 3
+
+Logging Costs
+1. Storage
+    How long do we keep logs?
+    Depends on level, the lower the number, the longer we keep it, in general 30-90 days
+
+2. CPU
+    Logging could be done as async, i.e. fire and forget
+    Disable expensive logging in normal operations
+
+
+What do we log?
+    PII
+        ip address of the user
+        usernames/passwords
+        JWT
+        email address
+
+
+    user id (from their JWT)
+
+    previous values of database rows/memory/etc.
+
+    URL, NOT SAS urls (safe-list query string parameters)
+    HTTP Methods (GET, POST, etc.)
+    Headers    
+        timestamps
+        api-version
+        request-id
+    Response code
+
+
+Answer 1:
+    Come up with 2 examples for each of the above categories from assignments we done.
+
+Answer 2:
+    False positives vs. false negatives?
+    Which is worse?
+
