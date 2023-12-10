@@ -15,9 +15,8 @@ Not actual problem yet, but could be
 1 - Error
 An actual problem, usually an exception is thrown
 
-0 - Crtical
+0 - Critical
 Entire server failure, perhaps not even able to boot up
-
 
 -1 Failure Audit
 Someone tried to login that isn't authorized
